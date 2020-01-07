@@ -1,0 +1,1 @@
+.img-content{position:relative;font-size:0}.img-content image{margin:0;border:0;outline:0}.img-def{position:absolute !important;top:0;left:0;transition:opacity .6s}.opacity{opacity:0}.show-img{opacity:1}

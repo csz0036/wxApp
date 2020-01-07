@@ -1,0 +1,4 @@
+<view class="i-as-mask i-class-mask i-mask-class {{ isShow ? 'i-as-mask-show' : '' }}" bindtap="handleClickMask" catchtouchmove="stopMove"></view>
+<view catchtouchmove="stopMove" class="i-class {{isIpx && needIpx ? 'ipx' : ''}} {{scrollUp ? 'i-as' : 'i-modal-content'}} {{ isShow ? (scrollUp ? 'i-as-show' : 'i-modal-show') : '' }}">
+    <slot></slot>
+</view>

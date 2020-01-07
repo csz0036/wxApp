@@ -1,0 +1,20 @@
+<i-modal visible="{{ visible }}" scrollUp="{{ isScrollUp }}">
+    <view class="content {{ visible ? 'bounceIn' : '' }}">
+        <i-img i-class="bg-light" width="318" height="318" loadImage="https://image.songshupinpin.com/goods_1547092175001.png"></i-img>
+        <i-img i-class="bg" width="360" height="435" loadImage="https://image.songshupinpin.com/goods_1547274119417.png"></i-img>
+
+        <view class="text-content">
+            <slot></slot>
+        </view>
+
+        <view class="confirm" bindtap="confirm">
+            <i-img width="180" height="54" loadImage="https://image.songshupinpin.com/goods_1547300743655.png"></i-img>
+            <button wx:if="{{needShare}}" open-type="share" hover-class="hover" class="btn-text" data-share="2">{{ btnText }}</button>
+            <view wx:else class="btn-text">{{ btnText }}</view>
+        </view>
+
+        <view wx:if="{{showCloseBtn}}" class="close" bindtap="close">
+            <i-img width="32" height="32" loadImage="https://image.songshupinpin.com/goods_1547109657886.png"></i-img>
+        </view>
+    </view>
+</i-modal>

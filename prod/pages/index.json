@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#FFF",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "首页",
+  "onReachBottomDistance": 500,
+  "usingComponents": {
+    "i-auth": "/components/auth"
+  }
+}

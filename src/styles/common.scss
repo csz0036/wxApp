@@ -1,0 +1,118 @@
+
+@mixin textHidden(){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+$colorMain: #F75451;
+@mixin doubleHidden($num){
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $num;
+  overflow: hidden;
+  text-overflow: initial;
+  white-space: normal;
+}
+
+@mixin moveUp($height){
+  animation: moveIn .3s forwards;
+  @keyframes moveIn {
+    0% {
+      transform: translateY($height);
+    }
+    100% {
+      transform: translateY(0)
+    }
+  }
+}
+
+//显示两行，超出部分展示省略号
+@mixin twoLine(){
+  white-space:initial;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical
+}
+
+//水平垂直居中
+@mixin flexCenVer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//多行水平垂直居中
+@mixin flexCenVerLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+//水平两端对齐，垂直居中
+@mixin flexBothEndsVer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin pxBorder($color, $radius: 0, $borderWidth: 1px, $border: all) {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    @if $border == all {
+      border: $borderWidth solid $color;
+    }
+    @else {
+      @each $member in $border{
+        border-#{$member}: $borderWidth solid $color;
+      };
+    }
+    width: 200%;
+    height: 200%;
+    border-radius: $radius * 2;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    @media (-webkit-min-device-pixel-ratio:2.5) {
+      width: 300%;
+      height: 300%;
+      border-radius: $radius * 3;
+      -webkit-transform: scale(.33333);
+      transform: scale(.33333);
+    }
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+  }
+}
+
+@mixin goodsListTips {
+  width: 86px;
+  height: 26px;
+  z-index: 1;
+  color: #fff;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  font-weight: bold;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(to top, #FF7955, #FF4242);
+    border-radius: 2px 2px 4px 4px;
+    transform: perspective(.5em) rotateX(-5deg);
+    transform-origin: top;
+  }
+}

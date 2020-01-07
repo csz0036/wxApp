@@ -1,0 +1,13 @@
+<view>
+    <!-- <i-auth
+    needAuth="{{ isLogin && accountStatus === 0 }}"
+  ></i-auth> -->
+    <view class="barcode">
+        <view class="barnum">{{code}}</view>
+        <canvas canvas-id="barcode" />
+    </view>
+    <view class="qrcode">
+        <view class="barnum">{{code}}</view>
+        <canvas canvas-id="qrcode" id="qrcode" />
+    </view>
+</view>

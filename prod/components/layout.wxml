@@ -1,0 +1,11 @@
+<view>
+    <view wx:if="{{!offLine}}" class="container {{isIpx && needIpx ? 'mb20' : ''}}">
+        <slot></slot>
+    </view>
+    <view wx:else class="link-fail-content" bindtap="reloadPage">
+        <image src="https://via.placeholder.com/150"></image>
+        <view class="h1">网络连接超时</view>
+        <view class="h2">请检查您的手机是否联网</view>
+        <view class="h3">点击屏幕重新加载</view>
+    </view>
+</view>
